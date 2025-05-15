@@ -27,6 +27,15 @@ export class CategoryController {
     );
   }
 
+  @Post('bulk')
+  createBulk(@Body() categories: CreateCategoryDto[]) {
+    return this.client.send('createBulkCategory', categories).pipe(
+      catchError((e) => {
+        throw new RpcException(e);
+      }),
+    );
+  }
+
   @Get()
   findAll() {
     return this.client.send('findAllCategory', {}).pipe(
@@ -62,6 +71,15 @@ export class CategoryController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.client.send('removeCategory', id).pipe(
+      catchError((e) => {
+        throw new RpcException(e);
+      }),
+    );
+  }
+
+  @Delete()
+  removeAll() {
+    return this.client.send('removeAllCategory', {}).pipe(
       catchError((e) => {
         throw new RpcException(e);
       }),
