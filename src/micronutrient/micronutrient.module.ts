@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { NatsModule } from 'src/nats/nats.module';
-import { BrandController } from './brand.controller';
+import { MicronutrientController } from './micronutrient.controller';
 
 @Module({
-  controllers: [BrandController],
+  controllers: [MicronutrientController],
   providers: [],
   imports: [NatsModule],
 })
-export class BrandModule {}
+export class MicronutrientModule {}
