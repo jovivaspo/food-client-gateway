@@ -12,11 +12,9 @@ import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { catchError } from 'rxjs';
 import { NATS_SERVICE } from 'src/config';
-import {
-  CreateIngredientDto,
-  IngredientDto,
-  UpdateIngredientDto,
-} from './dto/ingredient.dto';
+import { CreateIngredientDto } from './dto/create-ingredient.dto';
+import { IngredientDto } from './dto/ingredient.dto';
+import { UpdateIngredientDto } from './dto/update-ingredient.dto';
 
 @ApiTags('Ingredients')
 @Controller('ingredient')

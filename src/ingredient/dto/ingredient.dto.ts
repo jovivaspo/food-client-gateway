@@ -1,150 +1,22 @@
-import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import {
-  AdditiveType,
-  AllergenType,
-  OriginType,
-  RiskLevel,
-  RiskType,
-} from './types';
+import { ApiProperty } from '@nestjs/swagger';
+import { CreateIngredientDto } from './create-ingredient.dto';
 
-export class IngredientRiskDto {
-  @ApiProperty({ enum: RiskType })
-  riskType: RiskType;
+export class IngredientDto extends CreateIngredientDto {
+  @ApiProperty({
+    description: 'The unique identifier of the ingredient',
+    example: '123e4567-e89b-12d3-a456-426614174000',
+  })
+  id: string;
 
-  @ApiProperty({ enum: RiskLevel })
-  level: RiskLevel;
-}
-
-export class IngredientMicronutrientDto {
-  @ApiProperty()
-  micronutrientId: string;
-
-  @ApiProperty()
-  amount: number;
-}
-
-export class IngredientDto {
-  @ApiProperty()
-  id: number;
-
-  @ApiProperty()
-  name: string;
-
-  @ApiPropertyOptional()
-  scientificName?: string;
-
-  @ApiPropertyOptional()
-  isBasicFood?: boolean;
-
-  @ApiPropertyOptional()
-  description?: string;
-
-  @ApiProperty({ enum: AllergenType, default: AllergenType.NONE })
-  allergenType: AllergenType;
-
-  @ApiProperty({ enum: OriginType })
-  origin: OriginType;
-
-  @ApiProperty({ enum: AdditiveType, default: AdditiveType.NO })
-  additiveType: AdditiveType;
-
-  @ApiPropertyOptional()
-  servingSize?: number;
-
-  @ApiPropertyOptional()
-  servingMeasurement?: string;
-
-  @ApiProperty()
-  calories: number;
-
-  @ApiPropertyOptional()
-  proteins?: number;
-
-  @ApiPropertyOptional()
-  carbohydrates?: number;
-
-  @ApiPropertyOptional()
-  sugars?: number;
-
-  @ApiPropertyOptional()
-  fats?: number;
-
-  @ApiPropertyOptional()
-  saturatedFats?: number;
-
-  @ApiPropertyOptional()
-  fiber?: number;
-
-  @ApiPropertyOptional({ type: [IngredientRiskDto] })
-  risks?: IngredientRiskDto[];
-
-  @ApiPropertyOptional({ type: [IngredientMicronutrientDto] })
-  micronutrients?: IngredientMicronutrientDto[];
-
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Creation timestamp',
+    example: '2025-05-17T17:07:30.000Z',
+  })
   createdAt: Date;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Last update timestamp',
+    example: '2025-05-17T17:07:30.000Z',
+  })
   updatedAt: Date;
-}
-
-export class CreateIngredientDto {
-  @ApiProperty()
-  name: string;
-
-  @ApiPropertyOptional()
-  scientificName?: string;
-
-  @ApiPropertyOptional()
-  isBasicFood?: boolean;
-
-  @ApiPropertyOptional()
-  description?: string;
-
-  @ApiProperty({ enum: AllergenType, default: AllergenType.NONE })
-  allergenType: AllergenType;
-
-  @ApiProperty({ enum: OriginType })
-  origin: OriginType;
-
-  @ApiProperty({ enum: AdditiveType, default: AdditiveType.NO })
-  additiveType: AdditiveType;
-
-  @ApiPropertyOptional()
-  servingSize?: number;
-
-  @ApiPropertyOptional()
-  servingMeasurement?: string;
-
-  @ApiProperty()
-  calories: number;
-
-  @ApiPropertyOptional()
-  proteins?: number;
-
-  @ApiPropertyOptional()
-  carbohydrates?: number;
-
-  @ApiPropertyOptional()
-  sugars?: number;
-
-  @ApiPropertyOptional()
-  fats?: number;
-
-  @ApiPropertyOptional()
-  saturatedFats?: number;
-
-  @ApiPropertyOptional()
-  fiber?: number;
-
-  @ApiPropertyOptional({ type: [IngredientRiskDto] })
-  risks?: IngredientRiskDto[];
-
-  @ApiPropertyOptional({ type: [IngredientMicronutrientDto] })
-  micronutrients?: IngredientMicronutrientDto[];
-}
-
-export class UpdateIngredientDto extends CreateIngredientDto {
-  @ApiProperty()
-  id: number;
 }
