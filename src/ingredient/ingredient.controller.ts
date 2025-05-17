@@ -60,7 +60,7 @@ export class IngredientController {
     type: IngredientDto,
   })
   @ApiResponse({ status: 404, description: 'Ingredient not found' })
-  findOne(@Param('id') id: number) {
+  findOne(@Param('id') id: string) {
     return this.client.send('findOneIngredient', id).pipe(
       catchError((e) => {
         throw new RpcException(e);
@@ -78,7 +78,7 @@ export class IngredientController {
   })
   @ApiResponse({ status: 404, description: 'Ingredient not found' })
   update(
-    @Param('id') id: number,
+    @Param('id') id: string,
     @Body() updateIngredientDto: UpdateIngredientDto,
   ) {
     return this.client
@@ -99,7 +99,7 @@ export class IngredientController {
     type: IngredientDto,
   })
   @ApiResponse({ status: 404, description: 'Ingredient not found' })
-  remove(@Param('id') id: number) {
+  remove(@Param('id') id: string) {
     return this.client.send('removeIngredient', id).pipe(
       catchError((e) => {
         throw new RpcException(e);
