@@ -1,0 +1,78 @@
+export enum OriginType {
+  ANIMAL,
+  VEGETAL,
+  SYNTHETIC,
+  MINERAL,
+  MICROBIAL,
+}
+
+export enum AdditiveType {
+  SWEETENER,
+  PRESERVATIVE,
+  COLORANT,
+  EMULSIFIER,
+  FLAVOR_ENHANCER,
+  STABILIZER,
+  THICKENER,
+  ACIDULANT,
+  BULKING_AGENT,
+  COATING_AGENT,
+  ANTI_CAKING_AGENT,
+  ANTI_FOAMING_AGENT,
+  ANTIOXIDANT,
+  CLARIFYING_AGENT,
+  COAGULANT,
+  COLOR_FIXATIVE,
+  GASES,
+  RAISING_AGENT,
+  GELLING_AGENT,
+  HUMECTANT,
+  ACIDITY_REGULATOR,
+  FLAVORING,
+  MELTING_SALT,
+  SEQUESTRANT,
+  FLOUR_TREATMENT_AGENT,
+  VARIOUS,
+}
+
+enum HealthConcernType {
+  CARCINOGENIC,
+  ALLERGENIC,
+  INFLAMMATORY,
+  ENDOCRINE_DISRUPTOR,
+  NEUROTOXIC,
+  MUTAGENIC,
+  HEPATOTOXIC,
+  CARDIOTOXIC,
+  OBESOGENIC,
+  HIGH_GI,
+  ADDICTIVE,
+  CONTAMINAT,
+  ANTINUTRIENT,
+  RESPIRATORY_PROBLEMS,
+  DIGESTIVE_PROBLEMS,
+  BEHAVIORAL_DISORDERS,
+}
+
+enum AdditiveRating {
+  AVOID,
+  CAUTION,
+  SAFE,
+  SAFE_IN_MODERATION,
+  CUT_BACK,
+}
+
+export class AdditiveDto {
+  id: string;
+  name: string;
+  description?: string;
+  scientificName?: string;
+
+  origin: OriginType;
+  additiveType: AdditiveType;
+  healthConcerns: HealthConcernType[];
+  rating: AdditiveRating;
+
+  createdAt: Date;
+  updatedAt: Date;
+}
