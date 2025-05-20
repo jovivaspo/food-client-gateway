@@ -5,8 +5,8 @@ import { catchError } from 'rxjs';
 import { NATS_SERVICE } from 'src/config';
 import { AdditiveDto } from './dto/additive.dto';
 
-@ApiTags('Additives')
-@Controller('additives')
+@ApiTags('Additive')
+@Controller('additive')
 export class AdditiveController {
   constructor(@Inject(NATS_SERVICE) private readonly client: ClientProxy) {}
 
