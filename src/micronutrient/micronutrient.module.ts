@@ -7,4 +7,4 @@ import { MicronutrientController } from './micronutrient.controller';
   providers: [],
   imports: [NatsModule],
 })
-export class AdditiveModule {}
+export class MicronutrientModule {}
