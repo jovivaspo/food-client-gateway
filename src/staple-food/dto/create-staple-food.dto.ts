@@ -109,6 +109,16 @@ export class CreateStapleFoodDto {
   carbohydrates: number = 0;
 
   @ApiProperty({
+    description: 'Fibers content in grams per serving',
+    example: 0.4,
+    minimum: 0,
+    default: 0,
+  })
+  @IsNumber()
+  @IsPositive()
+  fiber: number = 0;
+
+  @ApiProperty({
     description: 'Total fat content in grams per serving',
     example: 0.3,
     minimum: 0,

@@ -113,6 +113,13 @@ export class StapleFoodDto {
   carbohydrates: number = 0;
 
   @ApiProperty({
+    description: 'Fiber content in grams per serving',
+    example: 28,
+    default: 0,
+  })
+  fiber: number = 0;
+
+  @ApiProperty({
     description: 'Total fat content in grams per serving',
     example: 0.3,
     default: 0,
