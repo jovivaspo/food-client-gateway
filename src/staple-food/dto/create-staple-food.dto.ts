@@ -4,7 +4,6 @@ import {
   IsEnum,
   IsNumber,
   IsOptional,
-  IsPositive,
   IsString,
   IsUUID,
 } from 'class-validator';
@@ -25,7 +24,6 @@ export class CreateStableFoodMicronutrientDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   amount: number = 0;
 }
 
@@ -65,7 +63,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   @IsOptional()
   servingSize?: number = 0;
 
@@ -85,7 +82,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   calories: number = 0;
 
   @ApiProperty({
@@ -95,7 +91,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   proteins: number = 0;
 
   @ApiProperty({
@@ -105,7 +100,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   carbohydrates: number = 0;
 
   @ApiProperty({
@@ -115,7 +109,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   fiber: number = 0;
 
   @ApiProperty({
@@ -125,7 +118,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   fats: number = 0;
 
   @ApiProperty({
@@ -135,7 +127,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   saturatedFats: number = 0;
 
   @ApiProperty({
@@ -145,7 +136,6 @@ export class CreateStapleFoodDto {
     default: 0,
   })
   @IsNumber()
-  @IsPositive()
   sugars: number = 0;
 
   @ApiProperty({
